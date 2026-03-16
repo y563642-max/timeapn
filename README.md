@@ -13,14 +13,16 @@ Comparison with other reversible non-stationary approaches:
 
 ## Usage
 ### Environment and dataset setup
+```
 pip install -r requirements.txt
 mkdir datasets
+```
 
 All the datasets are available at the Google Driver provided by Autoformer. Many thanks to their efforts and devotion!
 
 ## Running
 We provide ready-to-use scripts for different backbone models. For example, to run TimeAPN with DLinear:
-bash ./scripts/DLinear.sh # scripts for DLinear
+```bash ./scripts/DLinear.sh # scripts for DLinear```
 
 ## Acknowledgement
 This repo is built on the pioneer works. We appreciate the following GitHub repos a lot for their valuable code base or datasets:
