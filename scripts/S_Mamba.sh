@@ -1,0 +1,851 @@
+export CUDA_VISIBLE_DEVICES=0
+
+model_name=S_Mamba
+  
+python -u run_longExp.py \
+ --is_training 1 \
+ --root_path ./datasets/ETT-small \
+ --data_path ETTh1.csv \
+ --model_id ETTh1_96_96 \
+ --model $model_name \
+ --data ETTh1 \
+ --features M \
+ --seq_len 96 \
+ --pred_len 96 \
+ --e_layers 2 \
+ --enc_in 7 \
+ --dec_in 7 \
+ --c_out 7 \
+ --des 'Exp' \
+ --d_model 256 \
+ --d_state 2\
+ --d_ff 256 \
+ --itr 1 \
+ --learning_rate 0.0001\
+ --station_lr 0.00008 \
+ --j 1 \
+ --twice_epoch 1\
+ --pe_layers 0 \
+ --pd_model 256 \
+ --itr 1 \
+ --pd_ff 512
+
+
+python -u run_longExp.py \
+ --is_training 1 \
+ --root_path ./datasets/ETT-small \
+ --data_path ETTh1.csv \
+ --model_id ETTh1_96_192 \
+ --model $model_name \
+ --data ETTh1 \
+ --features M \
+ --seq_len 96 \
+ --pred_len 192 \
+ --e_layers 2 \
+ --enc_in 7 \
+ --dec_in 7 \
+ --c_out 7 \
+ --des 'Exp' \
+ --d_model 256 \
+ --d_state 2 \
+ --d_ff 256 \
+ --itr 1 \
+ --learning_rate 0.00007\
+ --station_lr 0.00008 \
+ --j 1 \
+ --pe_layers 0 \
+ --pd_model 256 \
+ --twice_epoch 1\
+ --itr 1 \
+ --pd_ff 512
+
+
+python -u run_longExp.py \
+ --is_training 1 \
+ --root_path ./datasets/ETT-small \
+ --data_path ETTh1.csv \
+ --model_id ETTh1_96_336 \
+ --model $model_name \
+ --data ETTh1 \
+ --features M \
+ --seq_len 96 \
+ --pred_len 336 \
+ --e_layers 2 \
+ --enc_in 7 \
+ --dec_in 7 \
+ --c_out 7 \
+ --des 'Exp' \
+ --d_model 256 \
+ --d_state 2 \
+ --d_ff 256 \
+ --itr 1 \
+ --learning_rate 0.00005\
+ --station_lr 0.00006 \
+ --j 1 \
+ --pe_layers 0 \
+ --pd_model 256 \
+ --itr 1 \
+ --twice_epoch 1\
+ --pd_ff 512
+
+
+python -u run_longExp.py \
+ --is_training 1 \
+ --root_path ./datasets/ETT-small \
+ --data_path ETTh1.csv \
+ --model_id ETTh1_96_720 \
+ --model $model_name \
+ --data ETTh1 \
+ --features M \
+ --seq_len 96 \
+ --pred_len 720 \
+ --e_layers 2 \
+ --enc_in 7 \
+ --dec_in 7 \
+ --c_out 7 \
+ --des 'Exp' \
+ --d_model 256 \
+ --d_state 2 \
+ --d_ff 256 \
+ --itr 1 \
+ --learning_rate 0.00005\
+ --station_lr 0.0004 \
+ --kernel_len 1 \
+ --hkernel_len 1 \
+ --j 0 \
+ --twice_epoch 1\
+ --pe_layers 0 \
+ --pd_model 512 \
+ --itr 1 \
+ --pd_ff 1024
+
+
+python -u run_longExp.py \
+ --is_training 1 \
+ --root_path ./datasets/ETT/ \
+ --data_path ETTh2.csv \
+ --model_id ETTh2_96_96 \
+ --model $model_name \
+ --data ETTh2 \
+ --features M \
+ --seq_len 96 \
+ --pred_len 96 \
+ --e_layers 2 \
+ --enc_in 7 \
+ --dec_in 7 \
+ --c_out 7 \
+ --des 'Exp' \
+ --d_model 128 \
+ --d_ff 256 \
+ --d_state 3 \
+ --learning_rate 0.00004 \
+ --itr 1\
+ --twice_epoch 1 \
+ --pd_ff 512 \
+ --pd_model 512 \
+ --station_lr 0.0001\
+ --pe_layers 0 \
+ --batch_size 256 \
+ --j 1 \
+ --kernel_len 1 \
+ --itr 1 \
+ --pd_ff 512
+
+
+python -u run_longExp.py \
+ --is_training 1 \
+ --root_path ./datasets/ETT/ \
+ --data_path ETTh2.csv \
+ --model_id ETTh2_96_192 \
+ --model $model_name \
+ --data ETTh2 \
+ --features M \
+ --seq_len 96 \
+ --pred_len 192 \
+ --e_layers 2 \
+ --enc_in 7 \
+ --dec_in 7 \
+ --c_out 7 \
+ --des 'Exp' \
+ --d_model 256 \
+ --d_ff 256 \
+ --d_state 3 \
+ --learning_rate 0.00004 \
+ --twice_epoch 1 \
+ --station_lr 0.0004\
+ --pe_layers 0 \
+ --batch_size 256 \
+ --kernel_len 1 \
+ --itr 1\
+ --j 1 \
+ --pe_layers 0 \
+ --pd_model 1024 \
+ --itr 1 \
+ --pd_ff 256
+
+
+python -u run_longExp.py \
+ --is_training 1 \
+ --root_path ./datasets/ETT/ \
+ --data_path ETTh2.csv \
+ --model_id ETTh2_96_336 \
+ --model $model_name \
+ --data ETTh2 \
+ --features M \
+ --seq_len 96 \
+ --pred_len 336 \
+ --e_layers 2 \
+ --enc_in 7 \
+ --dec_in 7 \
+ --c_out 7 \
+ --des 'Exp' \
+ --d_model 256 \
+ --d_ff 256 \
+ --d_state 2 \
+ --learning_rate 0.00003 \
+ --j 1 \
+ --twice_epoch 2 \
+ --pd_ff 1024 \
+ --kernel_len 1 \
+ --pd_model 512 \
+ --station_lr 0.0001\
+ --pe_layers 1 \
+ --batch_size 128 \
+ --itr 1 \
+
+python -u run_longExp.py \
+ --is_training 1 \
+ --root_path ./datasets/ETT/ \
+ --data_path ETTh2.csv \
+ --model_id ETTh2_96_720 \
+ --model $model_name \
+ --data ETTh2 \
+ --features M \
+ --seq_len 96 \
+ --pred_len 720 \
+ --e_layers 2 \
+ --enc_in 7 \
+ --dec_in 7 \
+ --c_out 7 \
+ --des 'Exp' \
+ --d_model 256 \
+ --d_ff 256 \
+ --d_state 2 \
+ --learning_rate 0.00007 \
+ --itr 1\
+ --twice_epoch 3 \
+ --pd_ff 512 \
+ --pd_model 256 \
+ --kernel_len 1 \
+ --station_lr 0.00008\
+ --wavelet 'coif6'\
+ --pe_layers 1 \
+ --batch_size 128 
+
+python -u run_longExp.py \
+ --is_training 1 \
+ --root_path ./datasets/ETT/ \
+ --data_path ETTm1.csv \
+ --model_id ETTm1_96_96 \
+ --model $model_name \
+ --data ETTm1 \
+ --features M \
+ --seq_len 96 \
+ --pred_len 96 \
+ --e_layers 2 \
+ --enc_in 7 \
+ --dec_in 7 \
+ --c_out 7 \
+ --des 'Exp' \
+ --d_model 256 \
+ --d_state 2 \
+ --learning_rate 0.00005 \
+ --d_ff 256 \
+ --itr 1\
+ --kernel_len 12 \
+ --batch_size 64 \
+ --twice_epoch 3 \
+ --wavelet 'coif6' \
+ --station_lr 0.0004 \
+ --pd_model 256\
+ --pd_ff 1024
+
+python -u run_longExp.py \
+ --is_training 1 \
+ --root_path ./datasets/ETT/ \
+ --data_path ETTm1.csv \
+ --model_id ETTm1_96_192 \
+ --model $model_name \
+ --data ETTm1 \
+ --features M \
+ --seq_len 96 \
+ --pred_len 192 \
+ --e_layers 2 \
+ --enc_in 7 \
+ --dec_in 7 \
+ --c_out 7 \
+ --des 'Exp' \
+ --d_model 128 \
+ --d_state 2 \
+ --learning_rate 0.00005 \
+ --d_ff 128 \
+ --itr 1\
+ --wavelet 'coif6'\
+ --period_len 12 \
+ --kernel_len 12 \
+ --station_lr 0.0001\
+ --batch_size 64 \
+ --twice_epoch 1 \
+ --pd_model 128\
+ --pd_ff 1024
+
+python -u run_longExp.py \
+ --is_training 1 \
+ --root_path ./datasets/ETT/ \
+ --data_path ETTm1.csv \
+ --model_id ETTm1_96_336 \
+ --model $model_name \
+ --data ETTm1 \
+ --features M \
+ --seq_len 96 \
+ --pred_len 336 \
+ --e_layers 2 \
+ --enc_in 7 \
+ --dec_in 7 \
+ --c_out 7 \
+ --des 'Exp' \
+ --d_model 128 \
+ --d_ff 256 \
+ --d_state 2 \
+ --learning_rate 0.00005 \
+ --itr 1 \
+ --wavelet 'coif6'\
+ --period_len 12 \
+ --kernel_len 12 \
+ --station_lr 0.00008\
+ --twice_epoch 1 \
+ --batch_size 64 \
+ --pd_model 128 \
+ --pe_layers 1 \
+ --pd_ff 512 
+
+python -u run_longExp.py \
+ --is_training 1 \
+ --root_path ./datasets/ETT/ \
+ --data_path ETTm1.csv \
+ --model_id ETTm1_96_720 \
+ --model $model_name \
+ --data ETTm1 \
+ --features M \
+ --seq_len 96 \
+ --pred_len 720 \
+ --e_layers 2 \
+ --enc_in 7 \
+ --dec_in 7 \
+ --c_out 7 \
+ --des 'Exp' \
+ --d_model 128 \
+ --d_state 2 \
+ --learning_rate 0.00005 \
+ --d_ff 256 \
+ --itr 1\
+ --wavelet 'coif6'\
+ --period_len 12 \
+ --kernel_len 12 \
+ --station_lr 0.00006\
+ --learning_rate 0.0001 \
+ --batch_size 64 \
+ --twice_epoch 2\
+ --pd_model 128\
+ --pd_ff 1024 
+
+python -u run_longExp.py \
+ --is_training 1 \
+ --root_path ./datasets/ETT/ \
+ --data_path ETTm2.csv \
+ --model_id ETTm2_96_96 \
+ --model $model_name \
+ --data ETTm2 \
+ --features M \
+ --seq_len 96 \
+ --pred_len 96 \
+ --e_layers 2 \
+ --enc_in 7 \
+ --dec_in 7 \
+ --c_out 7 \
+ --des 'Exp' \
+ --d_model 256 \
+ --d_ff 256 \
+ --d_state 2 \
+ --learning_rate 0.00005 \
+ --period_len 12 \
+ --kernel_len 12 \
+ --station_lr 0.0006\
+ --j 0 \
+ --twice_epoch 1 \
+ --pd_model 64 \
+ --batch_size 128\
+ --pe_layers 1 \
+ --pd_ff 512\
+ --itr 1
+
+python -u run_longExp.py \
+ --is_training 1 \
+ --root_path ./datasets/ETT/ \
+ --data_path ETTm2.csv \
+ --model_id ETTm2_96_192 \
+ --model $model_name \
+ --data ETTm2 \
+ --features M \
+ --seq_len 96 \
+ --pred_len 192 \
+ --e_layers 2 \
+ --enc_in 7 \
+ --dec_in 7 \
+ --c_out 7 \
+ --des 'Exp' \
+ --d_model 128 \
+ --d_state 2 \
+ --learning_rate 0.00005 \
+ --d_ff 128 \
+ --itr 1\
+ --kernel_len 12 \
+ --station_lr 0.0001\
+ --j 0 \
+ --twice_epoch 1 \
+ --pd_model 128 \
+ --batch_size 128\
+ --pe_layers 1\
+ --pd_ff 1024
+
+python -u run_longExp.py \
+ --is_training 1 \
+ --root_path ./datasets/ETT/ \
+ --data_path ETTm2.csv \
+ --model_id ETTm2_96_336 \
+ --model $model_name \
+ --data ETTm2 \
+ --features M \
+ --seq_len 96 \
+ --pred_len 336 \
+ --e_layers 2 \
+ --enc_in 7 \
+ --dec_in 7 \
+ --c_out 7 \
+ --des 'Exp' \
+ --d_model 128 \
+ --d_state 2 \
+ --learning_rate 0.00003 \
+ --kernel_len 1 \
+ --station_lr 0.0001\
+ --j 0 \
+ --twice_epoch 1 \
+ --pd_model 128 \
+ --batch_size 128\
+ --pe_layers 2 \
+ --pd_ff 512
+
+python -u run_longExp.py \
+ --is_training 1 \
+ --root_path ./datasets/ETT/ \
+ --data_path ETTm2.csv \
+ --model_id ETTm2_96_720 \
+ --model $model_name \
+ --data ETTm2 \
+ --features M \
+ --seq_len 96 \
+ --pred_len 720 \
+ --e_layers 2 \
+ --enc_in 7 \
+ --dec_in 7 \
+ --c_out 7 \
+ --des 'Exp' \
+ --d_model 128 \
+ --d_state 2 \
+ --learning_rate 0.00003 \
+ --itr 1\
+ --kernel_len 1 \
+ --station_lr 0.0004 \
+ --j 0 \
+ --twice_epoch 1 \
+ --pd_model 1024 \
+ --batch_size 32 \
+ --pe_layers 1 \
+ --pd_ff 512 \
+
+python -u run_longExp.py \
+ --is_training 1 \
+ --root_path ./datasets/weather/ \
+ --data_path weather.csv \
+ --model_id weather_96_96 \
+ --model $model_name \
+ --data custom \
+ --features M \
+ --seq_len 96 \
+ --pred_len 96 \
+ --e_layers 3 \
+ --enc_in 21 \
+ --dec_in 21 \
+ --c_out 21 \
+ --des 'Exp' \
+ --d_model 512 \
+ --d_ff 512 \
+ --learning_rate 0.00005 \
+ --train_epochs 5 \
+ --station_lr  0.001 \
+ --d_state 2 \
+ --pd_model 128\
+ --pd_ff 1024 \
+ --twice_epoch 1 \
+ --kernel_len 1 \
+ --pe_layers 3 \
+ --itr 1
+
+python -u run_longExp.py \
+ --is_training 1 \
+ --root_path ./datasets/weather/ \
+ --data_path weather.csv \
+ --model_id weather_96_192 \
+ --model $model_name \
+ --data custom \
+ --features M \
+ --seq_len 96 \
+ --pred_len 192 \
+ --e_layers 3 \
+ --enc_in 21 \
+ --dec_in 21 \
+ --c_out 21 \
+ --des 'Exp' \
+ --d_model 512 \
+ --d_ff 512 \
+ --learning_rate 0.00005 \
+ --train_epochs 5\
+ --station_lr  0.0006 \
+ --d_state 2 \
+ --pd_model 512\
+ --pd_ff 512 \
+ --twice_epoch 1 \
+ --kernel_len 1 \
+ --pe_layers 2\
+ --itr 1 
+
+python -u run_longExp.py \
+ --is_training 1 \
+ --root_path ./datasets/weather/ \
+ --data_path weather.csv \
+ --model_id weather_96_336 \
+ --model $model_name \
+ --data custom \
+ --features M \
+ --seq_len 96 \
+ --pred_len 336 \
+ --e_layers 3 \
+ --enc_in 21 \
+ --dec_in 21 \
+ --c_out 21 \
+ --des 'Exp' \
+ --d_model 512 \
+ --d_ff 512 \
+ --learning_rate 0.00002 \
+ --train_epochs 5\
+ --station_lr 0.0004 \
+ --d_state 2 \
+ --pd_model 128\
+ --pd_ff 128 \
+ --twice_epoch 1 \
+ --pe_layers 3 \
+ --kernel_len 1 \
+ --itr 1
+
+python -u run_longExp.py \
+ --is_training 1 \
+ --root_path ./datasets/weather/ \
+ --data_path weather.csv \
+ --model_id weather_96_720 \
+ --model $model_name \
+ --data custom \
+ --features M \
+ --seq_len 96 \
+ --pred_len 720 \
+ --e_layers 3 \
+ --enc_in 21 \
+ --dec_in 21 \
+ --c_out 21 \
+ --des 'Exp' \
+ --d_model 512 \
+ --d_ff 512 \
+ --learning_rate 0.00002 \
+ --train_epochs 5\
+ --station_lr 0.00006 \
+ --d_state 2 \
+ --pd_model 128\
+ --pd_ff 512 \
+ --twice_epoch 1 \
+ --kernel_len 1 \
+ --pe_layers 2\
+ --itr 1
+
+python -u run_longExp.py \
+ --is_training 1 \
+ --root_path ./dataset/ \
+ --data_path electricity.csv \
+ --model_id ECL_96_96 \
+ --model $model_name \
+ --data custom \
+ --features M \
+ --seq_len 96 \
+ --pred_len 96 \
+ --e_layers 3 \
+ --enc_in 321 \
+ --dec_in 321 \
+ --c_out 321 \
+ --des 'Exp' \
+ --d_model 512 \
+ --d_ff 512 \
+ --d_state 16 \
+ --batch_size 16 \
+ --learning_rate 0.0004 \
+ --station_lr 0.0004 \
+ --twice_epoch 1 \
+ --pd_ff 128 \
+ --pd_model 256 \
+ --pe_layers 1 \
+ --j 1 \
+ --itr 1 
+ 
+python -u run_longExp.py \
+ --is_training 1 \
+ --root_path ./dataset/ \
+ --data_path electricity.csv \
+ --model_id ECL_96_192 \
+ --model $model_name \
+ --data custom \
+ --features M \
+ --seq_len 96 \
+ --pred_len 192 \
+ --e_layers 3 \
+ --enc_in 321 \
+ --dec_in 321 \
+ --c_out 321 \
+ --des 'Exp' \
+ --d_model 512 \
+ --d_ff 512 \
+ --d_state 16 \
+ --train_epochs 5 \
+ --batch_size 16 \
+ --learning_rate 0.0005 \
+ --itr 1\
+ --station_lr 0.0001 \
+ --twice_epoch 1 \
+ --pd_ff 256 \
+ --pd_model 128 \
+ --j 1 \
+ --pe_layers 1 
+
+python -u run_longExp.py \
+ --is_training 1 \
+ --root_path ./dataset/ \
+ --data_path electricity.csv \
+ --model_id ECL_96_336 \
+ --model $model_name \
+ --data custom \
+ --features M \
+ --seq_len 96 \
+ --pred_len 336 \
+ --e_layers 3 \
+ --enc_in 321 \
+ --dec_in 321 \
+ --c_out 321 \
+ --des 'Exp' \
+ --d_model 512 \
+ --d_ff 512 \
+ --d_state 16 \
+ --train_epochs 5 \
+ --batch_size 16 \
+ --learning_rate 0.0003 \
+ --itr 1\
+ --station_lr 0.0001 \
+ --twice_epoch 1 \
+ --pd_ff  128 \
+ --pd_model 256\
+ --j 1 \
+ --pe_layers 1 
+
+python -u run_longExp.py \
+ --is_training 1 \
+ --root_path ./dataset/ \
+ --data_path electricity.csv \
+ --model_id ECL_96_720 \
+ --model $model_name \
+ --data custom \
+ --features M \
+ --seq_len 96 \
+ --pred_len 720 \
+ --e_layers 3 \
+ --enc_in 321 \
+ --dec_in 321 \
+ --c_out 321 \
+ --des 'Exp' \
+ --d_model 512 \
+ --d_ff 512 \
+ --d_state 16 \
+ --train_epochs 5 \
+ --batch_size 16 \
+ --learning_rate 0.0003 \
+ --itr 1\
+ --station_lr 0.0001 \
+ --twice_epoch 1 \
+ --pd_ff  128 \
+ --pd_model 128 \
+ --j 1 \
+ --pe_layers 1 
+
+
+python -u run_longExp.py \
+  --is_training 1 \
+  --root_path ./datasets/traffic/ \
+  --data_path traffic.csv \
+  --model_id traffic_720_96 \
+  --model $model_name \
+  --data custom \
+  --features M \
+  --seq_len 720 \
+  --pred_len 96 \
+  --e_layers 4 \
+  --enc_in 862 \
+  --dec_in 862 \
+  --c_out 862 \
+  --des 'Exp' \
+  --d_model 512 \
+  --d_ff 512 \
+  --batch_size 16 \
+  --learning_rate 0.001 \
+  --itr 1
+
+for pred_len in 96 ; do
+  for station_lr in 0.0006 ; do
+    for pd_ff in 128 ; do
+      for pd_model in 1024; do
+         python -u run_longExp.py \
+           --is_training 1 \
+           --root_path /home/huyue/Torch/time_series_forecasting/DDN_phase/datasets/traffic/ \
+           --data_path traffic.csv \
+           --model_id traffic_96_96 \
+           --model $model_name \
+           --data custom \
+           --features M \
+           --seq_len 720 \
+           --pred_len $pred_len \
+           --e_layers 4 \
+           --enc_in 862 \
+           --dec_in 862 \
+           --c_out 862 \
+           --des 'Exp' \
+           --d_model 512 \
+           --d_ff 512 \
+           --learning_rate 0.001 \
+           --station_lr $station_lr\
+           --twice_epoch 2 \
+           --j 1 \
+           --kernel_len 1 \
+           --hkernel_len 1 \
+           --pd_model $pd_model \
+           --batch_size 32 \
+           --pd_ff $pd_ff \
+           --wavelet 'coif6'
+           done
+         done
+      done
+    done
+
+python -u run_longExp.py \
+ --is_training 1 \
+ --root_path /home/huyue/Torch/time_series_forecasting/DDN_phase/datasets/traffic/ \
+ --data_path traffic.csv \
+ --model_id traffic_720_192 \
+ --model $model_name \
+ --data custom \
+ --features M \
+ --seq_len 720 \
+ --pred_len 192 \
+ --e_layers 4 \
+ --enc_in 862 \
+ --dec_in 862 \
+ --c_out 862 \
+ --des 'Exp' \
+ --d_model 512 \
+ --d_ff 512 \
+ --d_state  16\
+ --learning_rate 0.001 \
+ --station_lr 0.0006\
+ --twice_epoch 0 \
+ --j 0 \
+ --kernel_len 1 \
+ --hkernel_len 1 \
+ --pd_model 1024 \
+ --batch_size 32 \
+ --pe_layers 2\
+ --pd_ff 1024 \
+ --wavelet 'coif6'
+
+for d_state in 32; do
+  for learning_rate in 0.0006; do
+    for pe_layers in 1; do
+      for twice_epoch in 2; do
+         python -u run_longExp.py \
+           --is_training 1 \
+           --root_path /home/huyue/Torch/time_series_forecasting/DDN_phase/datasets/traffic/ \
+           --data_path traffic.csv \
+           --model_id traffic_720_336 \
+           --model $model_name \
+           --data custom \
+           --features M \
+           --seq_len 720 \
+           --pred_len 336 \
+           --e_layers 4 \
+           --enc_in 862 \
+           --dec_in 862 \
+           --c_out 862 \
+           --des 'Exp' \
+           --d_model 512 \
+           --d_ff 512 \
+           --factor 3\
+           --d_state  $d_state\
+           --learning_rate $learning_rate \
+           --station_lr 0.002 \
+           --twice_epoch $twice_epoch \
+           --j 1 \
+           --kernel_len 1 \
+           --hkernel_len 1 \
+           --pd_model 512 \
+           --batch_size 32 \
+           --pe_layers $pe_layers\
+           --pd_ff 1024 \
+           --wavelet 'coif6'
+           done
+         done
+      done
+    done
+
+
+python -u run_longExp.py \
+ --is_training 1 \
+ --root_path /home/huyue/Torch/time_series_forecasting/DDN_phase/datasets/traffic/ \
+ --data_path traffic.csv \
+ --model_id traffic_96_720 \
+ --model $model_name \
+ --data custom \
+ --features M \
+ --seq_len 96 \
+ --pred_len 720 \
+ --e_layers 4 \
+ --enc_in 862 \
+ --dec_in 862 \
+ --c_out 862 \
+ --c_out 862 \
+ --des 'Exp' \
+ --d_model 512 \
+ --d_ff 512 \
+ --batch_size 16 \
+ --learning_rate 0.0008\
+ --itr 1
