@@ -12,7 +12,7 @@ Multivariate forecasting results:
 ![image](https://github.com/y563642-max/timeapn/blob/main/figs/multivariate.jpg)
 
 Comparison with other reversible non-stationary approaches:
-![image]()
+![image](https://github.com/y563642-max/timeapn/blob/main/figs/compare.jpg)
 
 ## Usage
 ### Environment and dataset setup
