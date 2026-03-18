@@ -9,7 +9,7 @@ proposed framework is model-agnostic and can be seamlessly integrated with vario
 We perform comparative experiments across seven widely-used datasets using popular forecasting backbones, and further evaluate TimeAPN's performance against other reversible non-stationary approaches.
 
 Multivariate forecasting results:
-![image]()
+![image](https://github.com/y563642-max/timeapn/blob/main/figs/multivariate.jpg)
 
 Comparison with other reversible non-stationary approaches:
 ![image]()
