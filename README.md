@@ -29,15 +29,15 @@ bash ./scripts/DLinear.sh # scripts for DLinear
 ## Acknowledgement
 This repo is built on the pioneer works. We appreciate the following GitHub repos a lot for their valuable code base or datasets:
 
-FEDformer
+[FEDformer](https://github.com/MAZiqing/FEDformer)
 
-DLinear
+[DLinear](https://github.com/cure-lab/LTSF-Linear)
 
-PatchTST
+[PatchTST](https://github.com/yuqinie98/PatchTST)
 
-S_Mamba
+[S_Mamba](https://github.com/wzhwzhwzh0921/S-D-Mamba)
 
-DDN
+[DDN](https://github.com/Hank0626/DDN)
 
 ## Citation
 If you find our work helpful, please consider citing our paper:
