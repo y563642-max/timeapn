@@ -701,62 +701,42 @@ python -u run_longExp.py \
  --pe_layers 1 
 
 
-python -u run_longExp.py \
-  --is_training 1 \
-  --root_path ./datasets/traffic/ \
-  --data_path traffic.csv \
-  --model_id traffic_720_96 \
-  --model $model_name \
-  --data custom \
-  --features M \
-  --seq_len 720 \
-  --pred_len 96 \
-  --e_layers 4 \
-  --enc_in 862 \
-  --dec_in 862 \
-  --c_out 862 \
-  --des 'Exp' \
-  --d_model 512 \
-  --d_ff 512 \
-  --batch_size 16 \
-  --learning_rate 0.001 \
-  --itr 1
 
-for pred_len in 96 ; do
-  for station_lr in 0.0006 ; do
-    for pd_ff in 128 ; do
-      for pd_model in 1024; do
-         python -u run_longExp.py \
-           --is_training 1 \
-           --root_path /home/huyue/Torch/time_series_forecasting/DDN_phase/datasets/traffic/ \
-           --data_path traffic.csv \
-           --model_id traffic_96_96 \
-           --model $model_name \
-           --data custom \
-           --features M \
-           --seq_len 720 \
-           --pred_len $pred_len \
-           --e_layers 4 \
-           --enc_in 862 \
-           --dec_in 862 \
-           --c_out 862 \
-           --des 'Exp' \
-           --d_model 512 \
-           --d_ff 512 \
-           --learning_rate 0.001 \
-           --station_lr $station_lr\
-           --twice_epoch 2 \
-           --j 1 \
-           --kernel_len 1 \
-           --hkernel_len 1 \
-           --pd_model $pd_model \
-           --batch_size 32 \
-           --pd_ff $pd_ff \
-           --wavelet 'coif6'
-           done
-         done
-      done
-    done
+ for pred_len in 96 ; do
+   for station_lr in 0.0006 ; do
+     for pd_ff in 128 ; do
+       for pd_model in 1024; do
+          python -u run_longExp.py \
+            --is_training 1 \
+            --root_path /home/huyue/Torch/time_series_forecasting/DDN_phase/datasets/traffic/ \
+            --data_path traffic.csv \
+            --model_id traffic_720_96 \
+            --model $model_name \
+            --data custom \
+            --features M \
+            --seq_len 720 \
+            --pred_len $pred_len \
+            --e_layers 4 \
+            --enc_in 862 \
+            --dec_in 862 \
+            --c_out 862 \
+            --des 'Exp' \
+            --d_model 512 \
+            --d_ff 512 \
+            --learning_rate 0.001 \
+            --station_lr $station_lr\
+            --twice_epoch 0 \
+            --j 1 \
+            --kernel_len 1 \
+            --hkernel_len 1 \
+            --pd_model $pd_model \
+            --batch_size 32 \
+            --pd_ff $pd_ff \
+            --wavelet 'coif6'
+            done
+          done
+       done
+     done
 
 python -u run_longExp.py \
  --is_training 1 \
@@ -827,16 +807,15 @@ for d_state in 32; do
       done
     done
 
-
 python -u run_longExp.py \
  --is_training 1 \
  --root_path /home/huyue/Torch/time_series_forecasting/DDN_phase/datasets/traffic/ \
  --data_path traffic.csv \
- --model_id traffic_96_720 \
+ --model_id traffic_720_720 \
  --model $model_name \
  --data custom \
  --features M \
- --seq_len 96 \
+ --seq_len 720 \
  --pred_len 720 \
  --e_layers 4 \
  --enc_in 862 \
@@ -848,4 +827,12 @@ python -u run_longExp.py \
  --d_ff 512 \
  --batch_size 16 \
  --learning_rate 0.0008\
+ --kernel_len 1 \
+ --hkernel_len 1 \
+ --station_lr 0.0008\
+ --twice_epoch 4 \
+ --j 1 \
+ --pd_model 1024 \
+ --pd_ff 1024 \
+ --wavelet 'coif3'\
  --itr 1
